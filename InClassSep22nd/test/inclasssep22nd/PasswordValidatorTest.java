@@ -20,7 +20,35 @@ public class PasswordValidatorTest {
         PasswordValidator validator = new PasswordValidator();
 
         assertFalse(validator.isValid("abcdefg"));
-        assertTrue(validator.isValid("abcdefghijk"));
+    }
+    @Test
+    public void passwordMustContainAnUppercaseLetter() {
+
+        PasswordValidator validator =
+            new PasswordValidator();
+
+        assertFalse(validator.isValid("abcdefghijk"));
+    }
+    
+    @Test
+    public void passwordMustContainNumber(){
+        PasswordValidator validator =
+            new PasswordValidator();
+        assertFalse(validator.isValid("Abcdefghi"));
+    }
+    
+    @Test
+    public void passwordMustContainSpecial(){
+        
+    }
+        
+    
+    @Test
+    public void passwordFulfillsAllRequirements() {
+        PasswordValidator validator =
+            new PasswordValidator();
+        
+        assertTrue(validator.isValid("123Abcdefg"));
     }
 
     

@@ -22,13 +22,22 @@ public class PasswordValidator {
     public boolean isValid(String password){
         //Attributes to validate
         boolean hasEightChars = false;
+        boolean hasUpperCase = false;
+        boolean hasNumber = false;
         
         //Test if password is at least 8 characters long
         if (password.length() >= 8){
             hasEightChars = true;
         }
-        
-        return hasEightChars;
+        //Test if password has upper case letter
+        if (password.equals(password.toLowerCase()) == false){
+            hasUpperCase = true;
+        }
+        //Check if the password has a number
+        if (password.matches(".*\\d.*")){
+            hasNumber = true;
+        }
+        return (hasEightChars && hasUpperCase && hasNumber);
     }
     
 }
