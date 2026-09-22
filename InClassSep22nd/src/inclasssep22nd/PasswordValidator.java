@@ -24,6 +24,7 @@ public class PasswordValidator {
         boolean hasEightChars = false;
         boolean hasUpperCase = false;
         boolean hasNumber = false;
+        boolean hasSpecial = false;
         
         //Test if password is at least 8 characters long
         if (password.length() >= 8){
@@ -37,6 +38,8 @@ public class PasswordValidator {
         if (password.matches(".*\\d.*")){
             hasNumber = true;
         }
+        
+        
         return (hasEightChars && hasUpperCase && hasNumber);
     }
     

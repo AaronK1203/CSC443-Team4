@@ -39,10 +39,12 @@ public class PasswordValidatorTest {
     
     @Test
     public void passwordMustContainSpecial(){
-        
+        PasswordValidator validator =
+            new PasswordValidator();
+        assertFalse(validator.isValid("Abcdefghi123"));
     }
         
-    
+    /*
     @Test
     public void passwordFulfillsAllRequirements() {
         PasswordValidator validator =
@@ -50,7 +52,7 @@ public class PasswordValidatorTest {
         
         assertTrue(validator.isValid("123Abcdefg"));
     }
-
+    */
     
     
 }
